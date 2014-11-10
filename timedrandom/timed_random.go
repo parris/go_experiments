@@ -1,4 +1,4 @@
-package timedrandom
+package main
 
 import (
     "fmt"

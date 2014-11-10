@@ -1,4 +1,4 @@
-package timed_random
+package timedrandom
 
 import (
     "fmt"

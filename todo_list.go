@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 type TodoList struct {
     list []*TodoItem
 }
@@ -18,4 +20,16 @@ func (self *TodoList) toString() string {
     }
 
     return output
+}
+
+func processChanges(messages chan string) {
+    globalList := TodoList{}
+
+    fmt.Println("Start processing changes")
+    // forever!
+    for {
+        globalList.Add(<-messages)
+        fmt.Println("\n\nAdding new task...\n")
+        fmt.Println(globalList.toString())
+    }
 }
